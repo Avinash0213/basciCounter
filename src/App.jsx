@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
 const App = () => {
-  const [val,setVal]=useState(0);
+  const [val,setVal]=useState(Number(localStorage.getItem('count')) || 0);
+  localStorage.setItem('count',val);
   return (
     <div>
       <h1>Count: {val}</h1>
